@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'friendship.apps.FriendshipConfig',
-    'drf_spectacular', 
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
