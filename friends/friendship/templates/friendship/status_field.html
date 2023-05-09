@@ -1,0 +1,11 @@
+{% extends 'friendship/base.html' %}
+
+{% block content %}
+  <h2>Получение статуса дружбы</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="username">Имя пользователя:</label>
+    <input type="text" name="username" id="username" required><br>
+    <input type="submit" value="Отправить">
+  </form>
+{% endblock %}

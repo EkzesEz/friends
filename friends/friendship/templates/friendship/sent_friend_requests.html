@@ -1,0 +1,12 @@
+{% extends 'friendship/base.html' %}
+
+{% block content %}
+  <h2>Отправленные запросы дружбы</h2>
+  <ul>
+  {% for friend_request in sent_requests %}
+    <li>{{ friend_request.to_user }} - {% if friend_request.is_accepted %}Accepted{% else %}Pending{% endif %} {% if not friend_request.is_accepted %}<a href="{% url 'cancel_friend_request' friend_request.id %}">Cancel</a>{% endif %}</li>
+  {% empty %}
+    <li>Нет Отправленных запросов.</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
