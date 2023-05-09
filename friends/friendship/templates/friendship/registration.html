@@ -1,0 +1,15 @@
+{% extends 'friendship/base.html' %}
+
+{% block content %}
+  <h2>Регистрация</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="username">Имя пользователя:</label>
+    <input type="text" name="username" id="username" required><br>
+    <label for="password">Пароль:</label>
+    <input type="password" name="password1" id="password" required><br>
+    <label for="confirm_password">Подтвердите пароль:</label>
+    <input type="password" name="password2" id="confirm_password" required><br> 
+    <input type="submit" value="Зарегистрироваться">
+  </form>
+{% endblock %}

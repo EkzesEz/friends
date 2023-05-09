@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Friends{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/friendship">Главная</a></li>
+          <li><a href="/friendship/create-request">Создать запрос</a></li>
+          <li><a href="/friendship/outbox">Исходящие запросы</a></li>
+          <li><a href="/friendship/inbox">Входящие запросы</a></li>
+          <li><a href="/friendship/login">Войти</a></li>
+          <li><a href="/friendship/register">Зарегистрироваться</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>

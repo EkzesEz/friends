@@ -1,0 +1,20 @@
+{% extends 'friendship/base.html' %}
+{% block content %}
+<h2>Sent friend requests:</h2>
+<ul>
+{% for request in sent %}
+    <li>{{ request.to_user.username }} ({{ request.created_at }})</li>
+{% empty %}
+    <li>No friend requests sent.</li>
+{% endfor %}
+</ul>
+
+<h2>Received friend requests:</h2>
+<ul>
+{% for request in received %}
+    <li>{{ request.from_user.username }} ({{ request.created_at }}) <a href="{% url 'accept_friend_request' request.pk %}">Accept</a> <a href="{% url 'reject_friend_request' request.pk %}">Reject</a></li>
+{% empty %}
+    <li>No friend requests received.</li>
+{% endfor %}
+</ul>
+{% end block %}
