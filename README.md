@@ -1,0 +1,2 @@
+# friends
+social network "Friends"
