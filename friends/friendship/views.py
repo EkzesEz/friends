@@ -161,10 +161,19 @@ def _get_friendship_status(current_user, other_user):
         from_user=other_user,
         to_user=current_user
     ).exists()
-
+    try:
+        are_friends = FriendRequest.objects.get(
+            from_user=other_user,
+            to_user=current_user
+        ).accepted or FriendRequest.objects.get(
+            from_user=current_user,
+            to_user=other_user
+        ).accepted
+    except:
+        are_friends = False
 
     
-    if friend_request_sent and friend_request_received:
+    if (friend_request_sent and friend_request_received) or are_friends:
         friendship_status = 'Друзья'
     elif friend_request_sent:
         friendship_status = 'Заявка отправлена'

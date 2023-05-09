@@ -20,8 +20,3 @@ urlpatterns = [
     path('friends/', friend_list, name='friend_list'),
 
 ]
-#
-# надо создать шаблон user_profile или чем то заменить его в send_friend_request
-# запросы в друзья отправляются
-# надо протестить accept и reject
-#
